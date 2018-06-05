@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:view contentType="text/html" contracts="common,device-desktop,theme-#{theme.name}">
+    <ui:composition template="/templates/page-template.xhtml">
+    	<f:metadata>
+    		<f:viewAction action="#{userDetails.onload}"/>
+    	</f:metadata>
+        <ui:param name="pageTitle" value="Sign In"/>
+        <ui:define name="panel-top">
+        	<div class="container">
+            	<h1>Create your own account!</h1>
+            </div>
+        </ui:define>
+        <ui:define name="panel-main">
+            <div class="container">
+                <h2>Account</h2>
+                <h:form id="createAccountForm">
+                    <h:panelGrid columns="2" class="sign-up-table">
+                        <h:outputLabel for="username">Username</h:outputLabel>
+                        <h:inputText class="form-control" id="username" value="#{userDetails.user.username}"/>
+
+                        <h:outputLabel for="password">Password</h:outputLabel>
+                        <h:inputSecret class="form-control" id="password" value="#{userDetails.user.password}"/>
+						
+						<h:outputLabel for="emailAddress">E-mail</h:outputLabel>
+                        <h:inputSecret class="form-control" id="emailAddress" value="#{userDetails.user.emailAddress}"/>
+						
+						<h:outputLabel for="isAdmin">Admin rights?</h:outputLabel>
+						<h:selectOneRadio id="isAdmin" value="#{userDetails.user.isAdmin}">
+							<f:selectItem itemvalue="#{true}" itemLabel="Yes"></f:selectItem>
+							<f:selectItem itemvalue="#{false}" itemLabel="No"></f:selectItem>
+						</h:selectOneRadio>
+						
+						<h:outputText value=""/>
+                        <h:commandButton class="btn btn-warning btn-md" id="submit" value="Submit" action="#{userDetails.submit}"/>
+                    </h:panelGrid>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</f:view>
+</html>

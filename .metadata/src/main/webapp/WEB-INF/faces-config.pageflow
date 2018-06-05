@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15270914267050" configfile="/jsf-for-school/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="658" id="pf15275238268360" outlinks="pf15275297687090 pf15275297687091 pf15275298338716 pf15276200794890 pf15276216858803" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="sign-in.xhtml" x="122" y="1522" id="pf15275238268365" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" outlinks="pf15275238268376 pf15275238268377 pf15275238268378" inlinks="pf15275238268378" path="/sign-in.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin.xhtml" x="338" y="1330" id="pf15275238268379" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15275238268376 pf15275298338717 pf15276200794890" path="/admin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="student.xhtml" x="338" y="1714" id="pf152752382683710" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" inlinks="pf15275238268377 pf15275298338718" path="/student.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="946" id="pf15275297687094" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15275297687090 pf15275297687091" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="create-account.xhtml" id="pf15275298338719" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf15275298338717 pf15275298338718" inlinks="pf15275298338716" path="/create-account.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createSurvey" id="pf15276216858814" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf15276216858803" path="createSurvey"/>
+  <links id="pf15275238268376" target="pf15275238268379" source="pf15275238268365" outcome="admin" fromaction="#{signIn.submit}"/>
+  <links id="pf15275238268377" target="pf152752382683710" source="pf15275238268365" outcome="nonAdmin" fromaction="#{signIn.submit}"/>
+  <links id="pf15275297687090" target="pf15275297687094" source="pf15275238268360" outcome="home"/>
+  <links id="pf15275297687091" target="pf15275297687094" source="pf15275238268360" redirect="true" fromaction="#{userManager.signOut}"/>
+  <links id="pf15275238268378" target="pf15275238268365" source="pf15275238268365" outcome="failure" fromaction="#{signIn.submit}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf15275298338716" target="pf15275298338719" source="pf15275238268360" outcome="create account"/>
+  <links id="pf15275298338717" target="pf15275238268379" source="pf15275298338719" outcome="admin" fromaction="#{userDetails.submit}"/>
+  <links id="pf15275298338718" target="pf152752382683710" source="pf15275298338719" outcome="nonAdmin" fromaction="#{userDetails.submit}"/>
+  <links id="pf15276200794890" target="pf15275238268379" source="pf15275238268360" outcome="admin"/>
+  <links id="pf15276216858803" target="pf15276216858814" source="pf15275238268360" outcome="new survey"/>
+</pageflow:Pageflow>

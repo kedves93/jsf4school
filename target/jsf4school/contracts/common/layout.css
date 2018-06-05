@@ -1,0 +1,106 @@
+body {
+	background-color: black;
+}
+
+label {
+	color: white;
+}
+
+h1 {
+	color: white;
+}
+
+h2 {
+	color: white;
+}
+
+h3 {
+	color: white
+}
+
+header {
+	box-shadow: 5px 10px 18px #888888;
+}
+
+footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: #9d9d9d;
+   text-align: center;
+   font-size: 12px;
+   height: 17px;
+}
+
+.surveys-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.surveys-table-header th {
+    padding: 8px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+.surveys-table-row:nth-child(even) {
+    background-color: LightGrey;
+    color: black;
+}
+
+.surveys-table-row:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+
+.surveys-table-row:hover {
+	background-color: gray;
+}
+
+.surveys-table-col {
+	padding: 8px;
+    text-align: left;
+}
+
+.toggle-survey-details {
+	display: none
+}
+
+.surveys-table-detail-row {
+    text-align: center;
+    background-color: white;
+}
+
+.surveys-table-detail-col{
+	padding: 10px;
+}
+
+.sign-up-table td {
+	padding: 7px;
+}
+
+.sing-in-error-message {
+	color: red;
+	list-style-type: none;
+}
+
+#sign-out-form {
+	padding: 14px;
+}
+
+#sign-out-form a {
+	color: gray;
+}
+
+#sign-out-form a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.form-control:focus {
+	border-color: orange;
+	box-shadow: 0px 0px 8px 1px orange;
+}
+

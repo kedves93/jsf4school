@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="production">
+		<class>com.school.jsf.User</class>
+		<class>com.school.jsf.Survey</class>
+		<class>com.school.jsf.Question</class>
+		<class>com.school.jsf.Answer</class>
+		<properties>
+			<property name="javax.persistence.database-product-name" value="Derby"/>
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:MyDB;create=true"/>
+			<property name="javax.persistence.jdbc.user" value="user"/>
+			<property name="javax.persistence.jdbc.password" value="password"/>
+			
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+		    <property name="javax.persistence.schema-generation.create-source" value="script"/>
+		    <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/createDDL.sql"/>
+		    <property name="javax.persistence.schema-generation.drop-source" value="script"/>
+		    <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/dropDDL.sql"/>
+      		<property name="javax.persistence.sql-load-script-source" value="META-INF/data.sql"/>
+      		<property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>
+			<!--
+			<property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.scripts.create-target" value="create.dll"/>
+			<property name="javax.persistence.schema-generation.scripts.drop-target" value="drop.dll"/>
+			-->
+			<property name="eclipselink.application-location" value="src/main/java//META-INF"/>
+			<property name="eclipselink.logging.level" value="INFO"/>
+			
+		</properties>
+	</persistence-unit>
+</persistence>

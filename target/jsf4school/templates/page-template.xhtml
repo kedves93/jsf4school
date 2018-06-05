@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<f:view contentType="text/html">
+	<h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>#{pageTitle}</title>
+        <h:outputScript name="jquery-3.3.1.min.js"/>
+        <h:outputScript name="jquery-ui-1.12.1.custom/jquery-ui.min.js"/>
+        <h:outputScript name="features.js"/>
+        <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.js"/>
+        <h:outputStylesheet name="bootstrap-3.3.7-dist/css/bootstrap.css"/>
+        <h:outputStylesheet name="layout.css"/>
+    </h:head>
+    <h:body>
+        <ui:include src="page-header.xhtml"/>
+        
+        <ui:insert name="panel-top">
+	        <ui:include src="/templates/panel-top-default.xhtml"/>
+	    </ui:insert>
+	    
+        <ui:insert name="panel-main">Placeholder for main content</ui:insert>
+        <!-- <ui:include src="page-footer.xhtml"/> -->
+    </h:body>
+</f:view>
+</html>

@@ -1,0 +1,13 @@
+com\school\jsf\Answer.class
+com\school\jsf\Survey.class
+com\school\jsf\User.class
+com\school\jsf\createSurvey\CreateSurveyFlow.class
+com\school\jsf\UserManager.class
+com\school\jsf\SignIn.class
+com\school\jsf\TopSurveys.class
+com\school\jsf\SurveyServiceImpl.class
+com\school\jsf\UserServiceImpl.class
+com\school\jsf\UserDetails.class
+com\school\jsf\Question.class
+com\school\jsf\SurveyService.class
+com\school\jsf\UserService.class

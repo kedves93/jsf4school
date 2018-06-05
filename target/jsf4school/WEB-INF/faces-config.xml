@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>create account</from-outcome>
+            <to-view-id>/create-account.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/sign-in.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{signIn.submit}</from-action>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{signIn.submit}</from-action>
+            <from-outcome>nonAdmin</from-outcome>
+            <to-view-id>/student.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{signIn.submit}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/sign-in.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-action>#{userManager.signOut}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+            <if>#{true}</if>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>new survey</from-outcome>
+            <!-- the below id is the Flow Id. Defined in CreateSurveyFlow.java -->
+            <to-view-id>createSurvey</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>
